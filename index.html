@@ -32,17 +32,33 @@
             padding: 5px 10px;
         }
         #mobileControls {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        #mobileControls button {
-            font-size: 24px;
-            width: 60px;
-            height: 60px;
-            margin: 5px;
-        }
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+}
+.controlRow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#mobileControls button {
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+}
+.spacer {
+    width: 60px;
+    margin: 5px;
+}
+@media (max-width: 600px) {
+    #mobileControls {
+        display: flex;
+    }
+}
         .row {
             display: flex;
             justify-content: center;
@@ -72,17 +88,18 @@
     <button id="startButton">Начать игру</button>
     <button id="aiHintButton">ИИ подсказка</button>
     <div id="mobileControls">
-        <div class="row">
-            <button id="upButton">↑</button>
-        </div>
-        <div class="row">
-            <button id="leftButton">←</button>
-            <button id="rightButton">→</button>
-        </div>
-        <div class="row">
-            <button id="downButton">↓</button>
-        </div>
+    <div class="controlRow">
+        <button id="upButton">↑</button>
     </div>
+    <div class="controlRow">
+        <button id="leftButton">←</button>
+        <div class="spacer"></div>
+        <button id="rightButton">→</button>
+    </div>
+    <div class="controlRow">
+        <button id="downButton">↓</button>
+    </div>
+</div>
     <select id="difficultySelect">
         <option value="very_easy">Очень легкий</option>
         <option value="easy">Легкий</option>
